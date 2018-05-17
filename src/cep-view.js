@@ -12,7 +12,7 @@ class MyNewView extends PolymerElement {
         :host {
           display: block;
 
-          padding: 10px;
+          padding: 11px;
         }
       </style>
 
