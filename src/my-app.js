@@ -36,7 +36,7 @@ class MyApp extends PolymerElement {
     return html`
       <style>
         :host {
-          --app-primary-color: #4285f4;
+          --app-primary-color: #f48842;
           --app-secondary-color: black;
 
           display: block;
@@ -84,10 +84,7 @@ class MyApp extends PolymerElement {
         <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
           <app-toolbar>Menu</app-toolbar>
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-            <a name="view1" href="[[rootPath]]view1">View One</a>
-            <a name="view2" href="[[rootPath]]view2">View Two</a>
-            <a name="view3" href="[[rootPath]]view3">View Three</a>
-            <a name="new-view" href="[[rootPath]]new-view">New View</a>
+            <a name="cep-view" href="[[rootPath]]cep-view">Consultar CEP</a>
           </iron-selector>
         </app-drawer>
 
@@ -105,10 +102,7 @@ class MyApp extends PolymerElement {
               selected="[[page]]"
               attr-for-selected="name"
               role="main">
-            <my-view1 name="view1"></my-view1>
-            <my-view2 name="view2"></my-view2>
-            <my-view3 name="view3"></my-view3>
-            <my-new-view name="new-view"></my-new-view>
+            <cep-view name="cep-view"></cep-view>
             <my-view404 name="view404"></my-view404>
           </iron-pages>
         </app-header-layout>
@@ -140,8 +134,8 @@ class MyApp extends PolymerElement {
      // If no page was found in the route data, page will be an empty string.
      // Show 'view1' in that case. And if the page doesn't exist, show 'view404'.
     if (!page) {
-      this.page = 'view1';
-    } else if (['view1', 'view2', 'view3', 'new-view'].indexOf(page) !== -1) {
+      this.page = 'cep-view';
+    } else if (['cep-view'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'view404';
@@ -159,20 +153,11 @@ class MyApp extends PolymerElement {
     // Note: `polymer build` doesn't like string concatenation in the import
     // statement, so break it up.
     switch (page) {
-      case 'view1':
-        import('./my-view1.js');
-        break;
-      case 'view2':
-        import('./my-view2.js');
-        break;
-      case 'view3':
-        import('./my-view3.js');
-        break;
       case 'view404':
         import('./my-view404.js');
         break;
-      case 'new-view':
-        import('./my-new-view.js');
+      case 'cep-view':
+        import('./cep-view.js');
         break;
     }
   }

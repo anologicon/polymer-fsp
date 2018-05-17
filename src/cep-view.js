@@ -2,7 +2,6 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 /* Load shared styles. All view elements use these styles */
 import './shared-styles.js';
-import '@polymer/paper-checkbox/paper-checkbox.js';
 
 /* Extend the base PolymerElement class */
 class MyNewView extends PolymerElement {
@@ -18,14 +17,11 @@ class MyNewView extends PolymerElement {
       </style>
 
       <div class="card">
-        <div class="circle">1</div>
-        <h1>New View</h1>
-        <paper-checkbox>Ready to deploy!</paper-checkbox>
-        <paper-checkbox>Depolyed</paper-checkbox>
-        <p>New view!</p>
+        <div class="circle">CEP</div>
+        <h1>Pesquise um CEP aqui!</h1>
       </div>
     `;
   }
 }
 /* Register the new element with the browser */
-window.customElements.define('my-new-view', MyNewView);
+window.customElements.define('cep-view', MyNewView);
