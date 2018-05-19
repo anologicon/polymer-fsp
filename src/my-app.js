@@ -157,7 +157,7 @@ class MyApp extends PolymerElement {
         import('./my-view404.js');
         break;
       case 'cep-view':
-        import('./cep-view.js');
+        import('./cep/cep-view.js');
         break;
     }
   }
