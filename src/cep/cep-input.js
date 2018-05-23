@@ -1,5 +1,6 @@
 /* Load the PolymerElement base class and html helper function */
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import 'axios/dist/axios.min.js';
 /* Load shared styles. All view elements use these styles */
 import '../shared-styles.js';
 
@@ -23,6 +24,7 @@ class CepInput extends PolymerElement {
   static get properties() {
     return {
       search: {
+        type: String,
         notify: true,
         reflectToAttribute: true
       }
@@ -31,11 +33,27 @@ class CepInput extends PolymerElement {
 
   constructor() {
    super();
-   this.addEventListener('keypress', this.searchCep.bind(this));
+   this.addEventListener('keyup', this.searchCep.bind(this));
  }
 
  searchCep() {
-   return this.search = this.shadowRoot.querySelector('#cep-input').value;
+    var input_val = this.shadowRoot.querySelector('#cep-input').value;
+
+    var cep_json;
+
+    if (input_val.length == 8) {
+      cep_json = axios.get('https://viacep.com.br/ws/'+input_val+'/json/')
+      .then(response => {
+         return response.data;
+      })
+      .catch(error => {
+        console.log(console.error);
+      })
+    }
+
+    this.search = cep_json;
+
+    return this.search;
  }
 
 }

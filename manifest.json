@@ -1,7 +1,7 @@
 {
-  "name": "My App",
-  "short_name": "My App",
-  "description": "My App description",
+  "name": "For Simple Problems",
+  "short_name": "Simple Problem",
+  "description": "App for simple problems, i make it for fun",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",
@@ -16,6 +16,6 @@
   ],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#3f51b5",
+  "theme_color": "#f48842",
   "background_color": "#3f51b5"
 }
