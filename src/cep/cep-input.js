@@ -44,7 +44,7 @@ class CepInput extends PolymerElement {
     if (input_val.length == 8) {
       cep_json = axios.get('https://viacep.com.br/ws/'+input_val+'/json/')
       .then(response => {
-         return response.data;
+         return response.dataz;
       })
       .catch(error => {
         console.log(console.error);

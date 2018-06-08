@@ -13,23 +13,23 @@
     "test:integration": "polymer build # test that psk builds without error with the CLI"
   },
   "dependencies": {
-    "@polymer/app-layout": "^3.0.0-pre.15",
-    "@polymer/app-route": "^3.0.0-pre.15",
-    "@polymer/iron-flex-layout": "^3.0.0-pre.15",
-    "@polymer/iron-iconset-svg": "^3.0.0-pre.15",
-    "@polymer/iron-media-query": "^3.0.0-pre.15",
-    "@polymer/iron-pages": "^3.0.0-pre.15",
-    "@polymer/iron-selector": "^3.0.0-pre.15",
-    "@polymer/paper-checkbox": "^3.0.0-pre.18",
-    "@polymer/paper-icon-button": "^3.0.0-pre.15",
+    "@polymer/app-layout": "^3.0.0-pre.19",
+    "@polymer/app-route": "^3.0.0-pre.19",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.19",
+    "@polymer/iron-iconset-svg": "^3.0.0-pre.19",
+    "@polymer/iron-media-query": "^3.0.0-pre.19",
+    "@polymer/iron-pages": "^3.0.0-pre.19",
+    "@polymer/iron-selector": "^3.0.0-pre.19",
+    "@polymer/paper-checkbox": "^3.0.0-pre.19",
+    "@polymer/paper-icon-button": "^3.0.0-pre.19",
     "@polymer/paper-input": "^3.0.0-pre.19",
     "@polymer/polymer": "^3.0.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "axios": "^0.18.0"
   },
   "devDependencies": {
-    "polymer-cli": "^1.7.1",
-    "wct-browser-legacy": "^1.0.0"
+    "polymer-cli": "^1.7.2",
+    "wct-browser-legacy": "^1.0.1"
   },
   "engines": {
     "node": ">=8.0"
