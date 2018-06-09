@@ -50,7 +50,7 @@ class CepInput extends PolymerElement {
       })
       .catch(error => {
         console.log(console.error);
-      })
+      });
     }
 
     if (input_val.length == 0) {
