@@ -24,11 +24,11 @@
     "@polymer/paper-icon-button": "^3.0.0-pre.19",
     "@polymer/paper-input": "^3.0.0-pre.19",
     "@polymer/polymer": "^3.0.0",
-    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@webcomponents/webcomponentsjs": "^2.0.2",
     "axios": "^0.18.0"
   },
   "devDependencies": {
-    "polymer-cli": "^1.7.2",
+    "polymer-cli": "^1.7.4",
     "wct-browser-legacy": "^1.0.1"
   },
   "engines": {
