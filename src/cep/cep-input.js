@@ -17,7 +17,8 @@ class CepInput extends PolymerElement {
         }
       </style>
       <input type="text" id="cep-input" search name="cep" value="">
-      <span>[[search]]</span>
+      <br>
+      <span id="endereco">[[endereco]]</span>
     `;
   }
 
@@ -27,6 +28,9 @@ class CepInput extends PolymerElement {
         type: String,
         notify: true,
         reflectToAttribute: true
+      },
+      endereco : {
+        type : String
       }
     };
   }
@@ -39,22 +43,25 @@ class CepInput extends PolymerElement {
  searchCep() {
     var input_val = this.shadowRoot.querySelector('#cep-input').value;
 
-    var cep_json;
-
     if (input_val.length == 8) {
-      cep_json = axios.get('https://viacep.com.br/ws/'+input_val+'/json/')
+      axios.get('https://viacep.com.br/ws/'+input_val+'/json/')
       .then(response => {
-         return response.data;
+         this.callbackCep(response.data);
       })
       .catch(error => {
         console.log(console.error);
       })
     }
 
-    this.search = cep_json;
-
-    return this.search;
+    if (input_val.length == 0) {
+      this.endereco = '';
+    }
  }
+
+ callbackCep(data)
+ { 
+   this.endereco = data.logradouro + ' ' + data.bairro + ' ' + data.localidade;
+  }
 
 }
 /* Register the new element with the browser */
